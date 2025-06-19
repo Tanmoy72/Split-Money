@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "780337415186",
+    "project_id": "split-money-56965",
+    "storage_bucket": "split-money-56965.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:780337415186:android:ffa7e7b6f1941cf61784cb",
+        "android_client_info": {
+          "package_name": "com.paul.splitmoney"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "780337415186-plau6016ogt1ce3je8tnjvc2ht5gavk1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.paul.splitmoney",
+            "certificate_hash": "a1da319a97c0bd319b3594c8d3639518ea4cc980"
+          }
+        },
+        {
+          "client_id": "780337415186-u8dgn0je5fvsd71mhu8neoivmb8fc4e5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRvhvGLRaIt_a4xtjjHIENt7YoPbz_Zu0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "780337415186-u8dgn0je5fvsd71mhu8neoivmb8fc4e5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
