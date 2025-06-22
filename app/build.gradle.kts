@@ -81,6 +81,9 @@ dependencies {
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
+    implementation ("com.google.android.material:material:1.11.0")
+    implementation ("androidx.viewpager2:viewpager2:1.0.0")
+
 
 
 
