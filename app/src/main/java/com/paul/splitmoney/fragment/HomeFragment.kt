@@ -59,9 +59,25 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        groupAdapter = GroupAdapters(requireContext())
+      /*  groupAdapter = GroupAdapters(requireContext())
         binding.groupRecyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+            adapter = groupAdapter
+        }*/
+        groupAdapter = GroupAdapters(requireContext()) { groupId, groupName ->
+            val bundle = Bundle().apply {
+                putString("groupId", groupId)
+                putString("groupName", groupName)
+            }
+            val fragment = DetailsFragment().apply { arguments = bundle }
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView, fragment)
+                .addToBackStack(null)
+                .commit()
+        }
+
+        binding.groupRecyclerView.apply {
+            layoutManager = LinearLayoutManager(requireContext())
             adapter = groupAdapter
         }
     }
@@ -81,8 +97,10 @@ class HomeFragment : Fragment() {
         results1.addAll(results2)
         groupAllList.clear()
         for (document in results1) {
+            val groupId = document.id
             val groupName = document.getString("groupName") ?: continue
             val group = GroupModel(
+                groupId = groupId,
                 groupName = groupName,
                 groupImg = R.drawable.pic1, // optional static image
                 exp = "No expenses" // optional default value
@@ -104,11 +122,13 @@ class HomeFragment : Fragment() {
 
                 groupAllList.clear()
                 for (document in querySnapshot.documents) {
+                    val groupId = document.id
                     val groupName = document.getString("groupName") ?: continue
                     val group = GroupModel(
+                        groupId = groupId,
                         groupName = groupName,
                         groupImg = R.drawable.pic1, // optional static image
-                        exp = "No expenses" // optional default value
+                        exp = "No expenses"
                     )
                     groupAllList.add(group)
                 }

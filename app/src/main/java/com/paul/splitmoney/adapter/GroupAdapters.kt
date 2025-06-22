@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.paul.splitmoney.R
 import com.paul.splitmoney.model.GroupModel
 
-class GroupAdapters(context: Context):RecyclerView.Adapter<GroupAdapters.GroupViewModel>() {
+class GroupAdapters(context: Context, private val onItemClick: (groupId: String, groupName: String) -> Unit):RecyclerView.Adapter<GroupAdapters.GroupViewModel>() {
 
     private var groupList: ArrayList<GroupModel> = ArrayList()
     fun setGroupList(newList: ArrayList<GroupModel>) {
@@ -33,6 +33,10 @@ class GroupAdapters(context: Context):RecyclerView.Adapter<GroupAdapters.GroupVi
         holder.group.setImageResource(currentItem.groupImg)
         holder.groupNames.text = currentItem.groupName
         holder.expensesText.text = currentItem.exp
+
+        holder.itemView.setOnClickListener {
+            onItemClick(currentItem.groupId, currentItem.groupName)
+        }
     }
 
     class GroupViewModel(itemView: View) : RecyclerView.ViewHolder(itemView) {
