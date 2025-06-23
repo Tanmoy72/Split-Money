@@ -26,6 +26,13 @@ class AddExpenseFragment : Fragment() {
                 .addToBackStack(null)
                 .commit()
         }
+        view.findViewById<TextView>(R.id.paidByTextView).setOnClickListener {
+            val addExpFragment = PaidByFragment()
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView, addExpFragment)
+                .addToBackStack(null)
+                .commit()
+        }
         return view
     }
 
