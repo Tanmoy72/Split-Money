@@ -37,4 +37,71 @@
         android:layout_marginHorizontal="20dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text1"/>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <TextView
+            android:id="@+id/spentText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="130dp"
+            android:gravity="center"
+            android:text="Rs0.00"
+            android:textColor="@color/black"
+           app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+        <TextView
+            android:id="@+id/ofText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="6dp"
+            android:gravity="center"
+            android:text="of"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/spentText"/>
+        <TextView
+            android:id="@+id/totalSpent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="6dp"
+            android:gravity="center"
+            android:text="Rs0.00"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/ofText"/>
+
+        <TextView
+            android:id="@+id/totalSpentLeftText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Rs0.00"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/spentText"
+            app:layout_constraintTop_toBottomOf="@id/spentText" />
+
+        <TextView
+            android:id="@+id/leftText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="left"
+            android:layout_marginLeft="3dp"
+            android:textColor="@color/black"
+            app:layout_constraintLeft_toRightOf="@id/totalSpentLeftText"
+            app:layout_constraintTop_toBottomOf="@id/spentText" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
